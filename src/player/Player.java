@@ -23,8 +23,8 @@ public class Player implements ICombatant {
     }
 
     @Override
-    public EntityType getType() {
-        return EntityType.PLAYER;
+    public IEntityType.EntityType getType() {
+        return IEntityType.EntityType.PLAYER;
     }
 
     @Override

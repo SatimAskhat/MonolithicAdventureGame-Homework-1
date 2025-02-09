@@ -10,8 +10,10 @@ This project demonstrates the refactoring of a monolithic adventure game into a 
 src/
 ├── 📂 interfaces/
 │   ├── IEntity.java        # Base interface for all game entities
+│   ├── IEntityType.java    # Entity type definitions
 │   ├── ICombatant.java     # Interface for combat-capable entities
-│   └── IItem.java          # Interface for collectible items
+│   ├── IItem.java          # Interface for collectible items
+│   └── IItemType.java      # Item type definitions
 ├── 📂 player/
 │   └── Player.java         # Player implementation
 ├── 📂 enemies/
@@ -38,6 +40,7 @@ Each class has been designed with a single, well-defined responsibility:
 - `CombatManager`: Handles combat logic exclusively
 - `LevelManager`: Manages level progression and entity spawning
 - `Item` classes: Each handles its specific item behavior
+- Type interfaces: Separate enums into dedicated interfaces (`IEntityType`, `IItemType`)
 
 ### 2️⃣ Open/Closed Principle (OCP)
 The design is open for extension but closed for modification:
@@ -45,6 +48,7 @@ The design is open for extension but closed for modification:
 - New items can be implemented through the `IItem` interface
 - New combat mechanics can be added by extending `CombatManager`
 - New level types can be added in `LevelManager` without changing other components
+- New entity or item types can be added to their respective type interfaces
 
 ### 3️⃣ Liskov Substitution Principle (LSP)
 All derived classes can be used in place of their base classes:
@@ -55,14 +59,17 @@ All derived classes can be used in place of their base classes:
 ### 4️⃣ Interface Segregation Principle (ISP)
 Interfaces are focused and minimal:
 - `IEntity`: Basic entity properties (name, type)
+- `IEntityType`: Entity type enumeration
 - `ICombatant`: Combat-specific behaviors (health, damage, experience)
 - `IItem`: Item-specific behaviors (use effect)
+- `IItemType`: Item type enumeration
 
 ### 5️⃣ Dependency Inversion Principle (DIP)
 High-level modules depend on abstractions:
 - Game class depends on interfaces rather than concrete implementations
 - Managers work with interfaces (`ICombatant`, `IItem`) rather than specific classes
 - Combat system is decoupled from specific entity implementations
+- Type systems use interface-based enums for better encapsulation
 
 ## Key Components
 

@@ -21,8 +21,8 @@ public abstract class Enemy implements ICombatant {
     }
 
     @Override
-    public EntityType getType() {
-        return EntityType.ENEMY;
+    public IEntityType.EntityType getType() {
+        return IEntityType.EntityType.ENEMY;
     }
 
     @Override

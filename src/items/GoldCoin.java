@@ -9,13 +9,13 @@ public class GoldCoin implements IItem {
     }
 
     @Override
-    public EntityType getType() {
-        return EntityType.ITEM;
+    public IEntityType.EntityType getType() {
+        return IEntityType.EntityType.ITEM;
     }
 
     @Override
-    public ItemType getItemType() {
-        return ItemType.GOLD;
+    public IItemType.ItemType getItemType() {
+        return IItemType.ItemType.GOLD;
     }
 
     @Override

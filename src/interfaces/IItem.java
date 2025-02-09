@@ -2,7 +2,7 @@ package interfaces;
 
 public interface IItem extends IEntity {
     void use(ICombatant target);
-    ItemType getItemType();
+    IItemType.ItemType getItemType();
 }
 
 enum ItemType {
