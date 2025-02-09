@@ -110,6 +110,9 @@ The refactored design allows for easy additions:
 5. Reduced coupling between components
 6. Clear separation of game mechanics
 
+## Justification for Class Structure
+The new classes were structured to adhere to the SOLID principles, which enhance maintainability, testability, and extensibility. By separating concerns, each class focuses on a single responsibility, reducing complexity and improving readability. Interfaces decouple dependencies, allowing high-level modules to depend on abstractions, which facilitates easier addition of new features and reduces coupling. This clear separation of game mechanics ensures that changes in one part of the system do not affect others, promoting a modular and organized codebase. The refactored design allows for easy additions, such as new enemy types, items, combat mechanics, and level types, by extending existing classes or implementing new interfaces. This approach not only simplifies the integration of new features but also maintains the integrity of the existing system, ensuring that enhancements do not disrupt the current functionality.
+
 ## Running the Game
 ```java
 public class Game {
